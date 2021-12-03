@@ -22,7 +22,7 @@
   :guest: /home/vagrant/Code
 
 :synced_folder_w:
-  :host: www/
+  :host: ../ttt/www/
   :guest: /var/www    
 
 :copy_files:
