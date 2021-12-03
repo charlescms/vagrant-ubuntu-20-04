@@ -1,0 +1,64 @@
+https://www.youtube.com/watch?v=OuOb1_qADBQ&list=RDCMUCw9mYSlqKRXI6l4vH-tAYpQ&start_radio=1&rv=OuOb1_qADBQ&t=8
+
+git config --global user.name "Charlescms" 
+git config --global user.email "charlesmsantos3@hotmail.com"
+git config --global code.editor code
+git config --list
+git init
+git status
+git add -A 
+git commit -m "texto descritor"
+git log
+git branch
+================================
+= recuperando commit
+=======================================
+git reset --soft codigo do commit => git log
+          --hard 
+
+====================
+1.05 horas
+---------------------
+consultado branch
+git branch
+---------------------
+Criando um novo branch 
+git branch nome-breanch
+------------------------
+trocar de branch
+git checkout nome-breanch
+----------------------------
+git commit -am "descricao"
+----------------------------
+exibir diferencas de arquivos
+git diff
+git diff --nam,e-only
+----------------------------------
+etapas para transferiar o repositorio para p repositorio remoto
+conforme video https://www.youtube.com/watch?v=OuOb1_qADBQ&list=RDCMUCw9mYSlqKRXI6l4vH-tAYpQ&start_radio=1&rv=OuOb1_qADBQ&t=8
+
+gerando uma chave ssh key
+ssh-keygen -t rsa -b 4096 -C "charlesmsantos3@hotmail.com"
+cms@cms-hp:~$ ssh-keygen -t rsa -b 4096 -C "charlesmsantos3@hotmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/cms/.ssh/id_rsa): 
+-------------------------------------
+comando no quite 
+git remote add origin https://github.com/charlescms/projetos.git
+git remote add origin https://github.com/charlescms/Site-Parapsicologia.git
+
+
+git push origgin master
+
+criando um arquivo .gitignore
+
+git revert --no-edit codigo-do-commit
+--------------------------------
+remove um branch remoto
+git push origem :teste
+-----------------------------
+remover uma branch local 
+git branch -D [nome do branch a ser deletado]
+---------------------------
+pegarar os dadaos do repositorio remoto
+git pull origem master
