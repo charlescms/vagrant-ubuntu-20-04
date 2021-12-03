@@ -6,7 +6,7 @@ git config --global code.editor code
 git config --list
 git init
 git status
-git add -A 
+git add -A  ou git add .
 git commit -m "texto descritor"
 git log
 git branch
@@ -47,6 +47,7 @@ comando no quite
 git remote add origin https://github.com/charlescms/projetos.git
 git remote add origin https://github.com/charlescms/Site-Parapsicologia.git
 
+git remote -v
 
 git push origgin master
 
@@ -62,3 +63,29 @@ git branch -D [nome do branch a ser deletado]
 ---------------------------
 pegarar os dadaos do repositorio remoto
 git pull origem master
+
+
+git init
+git add .
+git status
+git commit -m "teste descritivo"
+===================================
+toke vs-code
+
+GitHub for VS Code
+Success!
+Authorization was successful. You will be redirected back to Visual Studio Code
+
+Didn't work?
+If you aren't redirected, you can add the token manually.
+[========================
+Your authorization token: vscode://vscode.github-authentication/did-authenticate?windowid=3&code=3dadac2590285cb1596a&state=7ec05669-7255-413b-ad49-c20d280e06f1
+]========================
+
+
+✅ Copied
+Copy the token.
+Switch back to VS code.
+Click Signing in to github.com... in the status bar.
+Paste the token and hit enter.
+
