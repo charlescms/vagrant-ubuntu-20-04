@@ -1,7 +1,32 @@
+
 echo '==> Setting time zone'
 
 timedatectl set-timezone $TIMEZONE
 cat /etc/timezone
+
+echo 'inicio chaves'
+
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F1656F24C74CD1D8
+
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9
+
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F1656F24C74CD1D8
+
+
+sudo apt-get  -q=2 update
+
+echo 'aplicativo de rede => netstat -rn'
+sudo apt-get install -y net-tools
+
+echo 'sudo apt-get  update fin'
+
+
+echo '==> $VM_CONFIG_PATH      = '+ $VM_CONFIG_PATH
+echo '==> $GUEST_SYNCED_FOLDER = '+ $GUEST_SYNCED_FOLDER
+echo '==> $FORWARDED_PORT_80   = '+ $FORWARDED_PORT_80
+echo '==> $TIMEZONE            = '+ $TIMEZONE
+echo '==> $PHP_ERROR_REPORTING = '+ $PHP_ERROR_REPORTING
+
 
 echo '==> Installing Linux tools'
 
@@ -14,6 +39,12 @@ echo '==> Installing Git'
 apt-get -q=2 install git git-man > /dev/null 2>&1
 
 echo '==> Installing Apache'
+
+echo '==> $VM_CONFIG_PATH      = '+ $VM_CONFIG_PATH
+echo '==> $GUEST_SYNCED_FOLDER = '+ $GUEST_SYNCED_FOLDER
+echo '==> $FORWARDED_PORT_80   = '+ $FORWARDED_PORT_80
+echo '==> $TIMEZONE            = '+ $TIMEZONE
+echo '==> $PHP_ERROR_REPORTING = '+ $PHP_ERROR_REPORTING
 
 apt-get -q=2 install apache2 apache2-utils > /dev/null 2>&1
 apt-get -q=2 update

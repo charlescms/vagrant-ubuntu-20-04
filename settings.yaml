@@ -1,10 +1,10 @@
 ---
 :machine:
   :hostname: ubuntu-20-04
-  :timezone: Canada/Pacific
-  :memory: 3072 # 3GB RAM
-  :cpus: 1
-
+  :timezone: America/Sao_Paulo
+  :memory: 1024 # 3GB RAM
+  :cpus: 2
+ #:timezone: America/Sao_Paulo # America/Sao_Paulo Canada/Pacific
 :forwarded_ports:
 # SSH
 - :id: ssh
@@ -18,16 +18,19 @@
   :guest: 3306
 
 :synced_folder:
-  :host: ~/Code
+  :host: Code/
   :guest: /home/vagrant/Code
+
+:synced_folder_w:
+  :host: www/
+  :guest: /var/www    
 
 :copy_files:
 - :source: ~/.ssh
   :destination: /home/vagrant/.ssh
 - :source: ~/.gitconfig
   :destination: /home/vagrant/.gitconfig
-- :source: ~/.subversion
-  :destination: /home/vagrant/.subversion
+
 
 :php_error_reporting: E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT
 ...

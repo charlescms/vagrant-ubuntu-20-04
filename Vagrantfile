@@ -17,6 +17,9 @@ Vagrant.configure("2") do |config|
   # vagrant@ubuntu-20-04
   config.vm.hostname = settings[:machine][:hostname]
 
+  # endereco ip
+  config.vm.network "private_network", ip: "192.168.56.5"
+  
   # Apache: http://localhost:8000
   settings[:forwarded_ports].each do |port_options|
     config.vm.network :forwarded_port, port_options
@@ -25,10 +28,13 @@ Vagrant.configure("2") do |config|
   # Synchronize folder
   config.vm.synced_folder settings[:synced_folder][:host], settings[:synced_folder][:guest], owner: "vagrant", group: "vagrant"
 
+  config.vm.synced_folder settings[:synced_folder_w][:host], settings[:synced_folder_w][:guest], owner: "www-data", group: "www-data", mount_options: ['dmode=777','fmode=666']
+
   # Copy files from host machine
-  settings[:copy_files].each do |file_options|
-    config.vm.provision :file, file_options
-  end unless settings[:copy_files].nil?
+  
+  #settings[:copy_files].each do |file_options|
+  #  config.vm.provision :file, file_options
+  #end unless settings[:copy_files].nil?
 
   # Provision bash script
   config.vm.provision :shell, path: "provision.sh", env: {
